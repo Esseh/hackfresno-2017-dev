@@ -54,5 +54,5 @@ func (s *S) MakeThread(ctx CONTEXT.S){
 }
 
 func (s *S) Key(ctx context.Context, k interface{}) *datastore.Key {
-	return datastore.NewKey(ctx, "Users", "", k.(int64), nil)	
+	return datastore.NewKey(ctx, "Threads", "", k.(int64), nil)	
 }
