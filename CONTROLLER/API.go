@@ -22,6 +22,9 @@ func API(ctx CONTEXT.S){
 		case "makePost":
 			g.Threads(ctx).GetThread(ctx).MakePost(ctx)
 			modified = true
+		case "makeDiscussionPost":
+			g.Discussion(ctx).MakePost(ctx)
+			modified = true
 	}
 	if modified {
 		g.LastUpdated = time.Now()

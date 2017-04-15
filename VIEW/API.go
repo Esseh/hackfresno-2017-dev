@@ -23,5 +23,7 @@ func API(ctx CONTEXT.S){
 			g.Threads(ctx).GetThreadTitles(ctx)
 		case "posts":
 			g.Threads(ctx).GetThread(ctx).GetPosts(ctx)
+		case "discussionPosts":
+			g.Discussion(ctx).GetPosts(ctx)
 	}
 }
