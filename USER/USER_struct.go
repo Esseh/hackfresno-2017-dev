@@ -4,7 +4,7 @@ import(
 	"google.golang.org/appengine/datastore"
 )
 type S struct{
-	Username, Email string
+	Email string
 	MyGroupIDS []int64
 	ProfilePictureURL string
 	ProfilePicture bool
