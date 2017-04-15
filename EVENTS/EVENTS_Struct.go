@@ -1,4 +1,4 @@
-package EVENT
+package EVENTS
 import(
 	"fmt"
 	"strconv"
