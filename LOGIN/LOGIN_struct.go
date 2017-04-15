@@ -8,5 +8,5 @@ type S struct{
 }
 
 func (s *S) Key(ctx context.Context, k interface{}) *datastore.Key {
-	return datastore.NewKey(ctx, "Users", k.(string), 0, nil)	
+	return datastore.NewKey(ctx, "Logins", k.(string), 0, nil)	
 }
