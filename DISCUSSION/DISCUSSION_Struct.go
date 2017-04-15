@@ -19,7 +19,7 @@ type S struct{
 func (s *S) GetPosts(ctx CONTEXT.S){
 	response := "["
 	for i,v := range s.Posts {
-		response += `{"poster":"`+v.PosterName+`","post":`+v.Post+`}`
+		response += `{"poster":"`+v.PosterName+`","post":"`+v.Post+`"}`
 		if i != len(s.Posts) - 1 {
 			response += ","
 		}
