@@ -60,6 +60,7 @@ func (s *S) MakeEvent(ctx CONTEXT.S){
 	s.Events = append([]Pair{Pair{title,key.IntID()}},s.Events...)
 	selfKey, _ := strconv.ParseInt(ctx.Req.FormValue("groupID"),10,64)
 	retrievable.PlaceEntity(ctx,selfKey,s)
+	fmt.Fprint(ctx.Res,`{"success":true}`)
 }
 
 
