@@ -59,4 +59,16 @@ func FindGroupsAPI(ctx CONTEXT.S){
 		return
 	}
 	q := datastore.NewQuery("GroupInstance")
+	if keyword1 != "" { q = q.Filter("Keyword1 =",keyword1) }
+	if keyword2 != "" { q = q.Filter("Keyword2 =",keyword2) }
+	if keyword3 != "" { q = q.Filter("Keyword3 =",keyword3) }
+	response := "["
+	t := q.Run(ctx)
+	for true {
+        x := GROUPS.S{}
+        key, err := t.Next(&x)
+        if err == datastore.Done { break } else if err != nil { continue }
+		response += `{"id":`+strconv.FormatInt(key.IntID(),10)+`,"title":"`+x.Title+`"},`
+	}
+	fmt.Fprint(ctx.Res,response[:len(response)-1]+"]")
 }
