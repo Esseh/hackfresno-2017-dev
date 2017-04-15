@@ -48,7 +48,7 @@ func (s *S) MakeThread(ctx CONTEXT.S){
 		return
 	}
 	s.Discussions = append([]Pair{Pair{threadTitle,key.IntID()}},s.Discussions...)
-	id , _ := strconv.ParseInt(ctx.Req.FormValue("threadsID"),10,64)
+	id , _ := strconv.ParseInt(ctx.Req.FormValue("groupID"),10,64)
 	retrievable.PlaceEntity(ctx,id,s)
 	fmt.Fprint(ctx.Res,`{"success":true}`)
 }
