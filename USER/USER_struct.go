@@ -6,6 +6,8 @@ import(
 type S struct{
 	Username, Email string
 	MyGroupIDS []int64
+	ProfilePictureURL string
+	ProfilePicture bool
 }
 
 func (s *S) Key(ctx context.Context, k interface{}) *datastore.Key {

@@ -20,7 +20,7 @@ func NewContext(res http.ResponseWriter,req *http.Request) S {
 	c, err := req.Cookie("login")
 	if err != nil {
 		userKey, _ := strconv.ParseInt(c.Value,10,64)
-		retrievable.GetEntity(ctx,userKey,&u)
+		retrievable.GetEntity(ctx_a,userKey,&u)
 	}
 	return S{res,req,u,ctx_a}
 }
