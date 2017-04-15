@@ -12,7 +12,7 @@ import (
 
 func Login(ctx context.Context, res http.ResponseWriter, req *http.Request, email string){
 	Login := LOGIN.S{}
-	if retrievable.GetEntity(ctx,email,Login) != nil {
+	if retrievable.GetEntity(ctx,email,&Login) != nil {
 		// Make a New User
 		key, err := retrievable.PlaceEntity(ctx,int64(0),&USER.S{Email:email,})
 		if err != nil { return }
@@ -20,7 +20,7 @@ func Login(ctx context.Context, res http.ResponseWriter, req *http.Request, emai
 		_, err = retrievable.PlaceEntity(ctx,email,&Login)
 		if err != nil { return }
 	}
-	http.SetCookie(res,&Cookie{
+	http.SetCookie(res,&http.Cookie{
 		Name: "login",
 		Value: strconv.FormatInt(Login.UserID,10),
 		HttpOnly: true,
