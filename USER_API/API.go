@@ -12,11 +12,13 @@ import(
 func CreateGroupAPI(ctx CONTEXT.S){
 	l := LOGIN.S{}
 	retrievable.GetEntity(ctx,ctx.User.Email,&l)
+	title := ctx.Req.FormValue("title")
 	keyword1 := ctx.Req.FormValue("university")
 	keyword2 := ctx.Req.FormValue("field")
 	keyword3 := ctx.Req.FormValue("subject")
 	about    := ctx.Req.FormValue("about")
 	key , _ := retrievable.PlaceEntity(ctx,int64(0),&GROUPS.S{
+		Title: title,
 		LastUpdated: time.Now(),
 		Keyword1: keyword1,
 		Keyword2: keyword2,
