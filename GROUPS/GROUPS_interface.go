@@ -13,6 +13,7 @@ import(
 )
 
 type S struct {
+	Title string
 	LastUpdated time.Time
 	Keyword1, Keyword2, Keyword3 string
 	About string
