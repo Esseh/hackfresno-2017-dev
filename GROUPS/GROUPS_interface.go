@@ -46,5 +46,5 @@ func (s *S)LastModified(ctx CONTEXT.S){
 }
 
 func (s *S) Key(ctx context.Context, k interface{}) *datastore.Key {
-	return datastore.NewKey(ctx, "EventsContainer", "", k.(int64), nil)
+	return datastore.NewKey(ctx, "GroupInstance", "", k.(int64), nil)
 }
